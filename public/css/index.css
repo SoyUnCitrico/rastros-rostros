@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #010101;
+  justify-items: center;
+}
+
+main {
+  /* background: red; */
+  display: grid;
+  justify-self: center;
+  width: 95%;
+}
+
+.hero-title {
+  display: grid;
+  text-align: center;
+  color:whitesmoke;
+  /* background-color: yellow; */
+  margin: 4rem 0 2rem 0;
+  place-items: center;
+}
+
+.hero-nav {
+  /* background-color: yellowgreen; */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  place-items: center;
+}
+
+.hero-nav a{
+  border: ghostwhite 1px outset;
+  padding: 1.6rem;
+  border-radius: 8px;
+  color: whitesmoke;
+  text-decoration:none
+}
+
+.hero-nav a:hover{
+  border: none;
+  color:#010101;
+  background: whitesmoke;
+  /* text-decoration:none */
+}
