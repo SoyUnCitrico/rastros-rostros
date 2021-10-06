@@ -4,4 +4,4 @@ config.js
 
 node_modules
 
-.mp4
+*.mp4
