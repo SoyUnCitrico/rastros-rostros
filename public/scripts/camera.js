@@ -1,13 +1,30 @@
 const boton = document.querySelector('#snapButton');
 const sketchContainer = document.querySelector('#sketch_container');
-
-let ancho = sketchContainer.offsetWidth * 0.85;
-if(ancho > 700) ancho = 700;
-let alto = ancho * 3 / 4;
 let lat,lon;
 let capture;
 let canvas;
 let data;
+
+let ancho = window.innerWidth;
+let alto = window.innerHeight;
+
+// let ancho = sketchContainer.offsetWidth;
+// let alto = sketchContainer.offsetHeight;
+console.log(ancho, alto);
+
+if(ancho > alto) {
+    if(ancho > 700) { 
+        ancho = 700;
+    } else {
+        ancho = sketchContainer.offsetWidth * 0.85;
+    }
+    alto = ancho * 3 / 4;
+} else {
+    ancho = sketchContainer.offsetWidth * 0.95;
+    alto = ancho;
+}
+
+console.log(ancho, alto);
 
 boton.addEventListener('click', async () => {
     capture.loadPixels();
