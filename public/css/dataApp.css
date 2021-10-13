@@ -62,3 +62,8 @@ a:hover{
   background: #010101;
   cursor: pointer;
 }
+
+.videoLoop {
+  width: 95%;
+  justify-items: center;
+}

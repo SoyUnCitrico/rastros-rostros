@@ -100,11 +100,11 @@ class AutoPause {
 
 
 const video =  document.querySelector("video");
-const buttonPlay =  document.querySelector("#buttonPlay");
+// const buttonPlay =  document.querySelector("#buttonPlay");
 const player = new MediaPlayer({ el: video, plugins: [
     new AutoPlay(),
     new AutoPause(),
 ] });
 // console.log(player)
-buttonPlay.onclick = () => player.togglePlay();
+// buttonPlay.onclick = () => player.togglePlay();
 

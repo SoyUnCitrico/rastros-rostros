@@ -40,15 +40,27 @@ boton.addEventListener('click', async () => {
         };
     
     await fetch('/photo/', options)
-        .then(response => {    
+        .then(async (response) => {    
             if (response.ok) {
-                window.location.reload();
-            } else {
+                // Para recargar la pagina
+                // window.location.reload();
+                // Para mandar hacia otra pagina los datos del analisis
+                let respuesta = await response.json();
+                let edad = (Math.round(respuesta.body.age).toString());
+                let emo = (respuesta.body.emotion);
+                let genero = (respuesta.body.gender);
+                window.location.assign(`./dataApp.html?edad=${edad}&emocion=${emo}&genero=${genero}`)
+            } else if(response === undefined){
+                if(!alert('Algo ocurrio al tomar la foto, intentalo de nuevo')){window.location.reload();}
+            }   else {
                 if(!alert('Algo ocurrio al tomar la foto, intentalo de nuevo')){window.location.reload();}
                 throw new Error('Algo ocurrio al tomar la foto, intentalo de nuevo');  
             }
         })
-        .catch(e => console.log(e));
+        .catch(e => {
+            if(!alert('Ocurrio un error al subir la foto, intentalo de nuevo')){window.location.reload();}
+            console.log(e);
+        });
 });
 
 

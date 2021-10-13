@@ -2,8 +2,10 @@ const store = require('./store-photos');
 const request = require('request-promise-native');
 const Photo = require('./model-photos');
 const fs = require("fs");
-const faceDetection = process.env.FACE_DETECTION;
-const faceEmotions = process.env.FACE_EMOTIONS;
+const { FACE_DETECTION, FACE_EMOTIONS } = require('../../config');
+
+// const FACE_DETECTION = process.env.FACE_DETECTION;
+// const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
 
 const makeRequest = async (method, url, datos, files = {}) => {
     let data = JSON.parse(JSON.stringify(datos))
@@ -26,7 +28,16 @@ const makeRequest = async (method, url, datos, files = {}) => {
 const addPhoto = (reqBody) => {
     return new Promise(async (resolve, reject) => {    
         try{
-            let analysis = await makeRequest("POST", faceDetection, {"photo": reqBody.snap}, {});
+            let analysis = await makeRequest("POST", FACE_DETECTION, {"photo": reqBody.snap}, {})
+                                    .then(response => {
+                                        if(!response) {
+                                            reject("[makeRequest] No se detecto rostro en la foto");
+                                            return false;
+                                        } else {
+                                            return response;
+                                        }
+                                    })
+                                    .catch(e => console.error(e));
             analysis = JSON.parse(analysis);
 
             // Revisa si hay la informacion del analisis de rostro
@@ -36,7 +47,21 @@ const addPhoto = (reqBody) => {
                 return false;
             }
             
-            let emotions = await makeRequest("POST", faceEmotions, {"photo": reqBody.snap}, {});
+            let emotions = await makeRequest("POST", FACE_EMOTIONS, {"photo": reqBody.snap}, {})
+                                    .then(response => {
+                                        if(!response) {
+                                            reject("[makeRequest] No se detectaron emociones en la foto");
+                                            return false;
+                                        } else {
+                                            return response;
+                                        }
+                                    })
+                                    .catch(e => console.error(e));
+            if(!emotions) {
+                console.error("[makeRequest] No se detectaron emociones");
+                reject("No hay rostro en la foto");
+                return false;
+            }
             emotions = JSON.parse(emotions);
             // Revisa si la peticion para la deteccion de emociones es exitosa
             if(emotions.status === 'failure') {
@@ -62,6 +87,7 @@ const addPhoto = (reqBody) => {
                 emotionToDB = ["cubrebocas", "1"];
             } else {
                 let emociones = Object.entries(emotions.faces[0].emotions);
+                // console.log(emociones);
                 let valores = Object.values(emotions.faces[0].emotions);
                 let maxVal = Math.max(...valores);
                 emociones.forEach(value => {
