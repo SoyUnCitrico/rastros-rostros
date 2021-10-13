@@ -4,7 +4,7 @@ const express = require('express');
 const db = require('./db.js');
 const router = require('./network/routes')
 const DB_URI = process.env.DB_URI;
-const PORT = procees.env.PORT;
+const PORT = process.env.PORT;
 
 db.connect(DB_URI);
 
