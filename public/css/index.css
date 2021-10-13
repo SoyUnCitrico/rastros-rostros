@@ -1,7 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:  'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -20,15 +20,18 @@ main {
   width: 95%;
 }
 
-.hero-title {
+.hero {
   display: grid;
   text-align: center;
   color:whitesmoke;
   /* background-color: yellow; */
   margin: 4rem 0 2rem 0;
   place-items: center;
+  justify-self: center;
 }
-
+video {
+  width: 100%;
+}
 .hero-nav {
   /* background-color: yellowgreen; */
   display: grid;
@@ -49,4 +52,29 @@ main {
   color:#010101;
   background: whitesmoke;
   /* text-decoration:none */
+}
+
+.hero-gifs {
+  /* background: red; */
+  display: grid;
+  width: 100%;
+}
+
+.hero-prox {
+  color: whitesmoke;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  /* background-color: yellow; */
+  display: grid;
+  justify-items: center;
+  height: 200px;
+  padding: 2rem;
+}
+
+.hero-prox h3{
+  margin-top: 2rem;
+}
+
+video {
+  width: 100%;
 }

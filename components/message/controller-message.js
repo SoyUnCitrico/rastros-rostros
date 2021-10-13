@@ -6,7 +6,7 @@ const addMessage = (user, message, location = null) => {
     
     if(!user || !message) {
       console.error("[messageController] No hay usuario o mensaje");
-      reject("Los datos son correctos");
+      reject("Los datos son incorrectos");
       return false;
     }
 

@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  /* position: fixed; */
+  width: 100%;
+  background: #010101;
+  justify-items: center;
+  color: white;
+}
+main {
+  display: grid;
+  /* justify-content: center; */
+}
+h1 {
+  text-align: center;
+  padding: 2rem;
+  font-size: 2.6rem;
+}
+
+#sketch_container {
+  display:grid;
+  justify-content: center;
+}
+p {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 0.6rem;
+}
+
+a {
+  margin: 1rem;
+  border: #f8f8ff 1px outset;
+  padding: .6rem;
+  width: 200px;
+  text-align: center;
+  border-radius: 8px;
+  color: whitesmoke;
+  text-decoration: none;
+  justify-self: center;
+}
+
+a:hover{
+  border: none;
+  color:#010101;
+  background: whitesmoke;
+}
+
+#snapButton {
+  margin: 1rem;
+  padding: .6rem;
+  border-radius: 8px;
+  width: 240px;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  justify-self: center;
+  border: whitesmoke 1px outset;
+  color:#010101;
+  background: whitesmoke;
+  text-decoration: none;
+}
+
+#snapButton:hover{
+  border: #f8f8ff 1px outset;
+  color: whitesmoke;
+  background: #010101;
+  cursor: pointer;
+}

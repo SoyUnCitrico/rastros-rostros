@@ -1,6 +1,6 @@
-development.env
-production.env
-config.js
+*.env
+# production.env
+# config.js
 
 node_modules
 
