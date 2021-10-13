@@ -1,8 +1,10 @@
 
 const express = require('express');
-const {DB_URI, PORT} = require('./config.js');
+// const {DB_URI, PORT} = require('./config.js');
 const db = require('./db.js');
 const router = require('./network/routes')
+const DB_URI = process.env.DB_URI;
+const PORT = procees.env.PORT;
 
 db.connect(DB_URI);
 
