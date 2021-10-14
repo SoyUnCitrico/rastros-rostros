@@ -41,7 +41,7 @@ a:hover{
   background: whitesmoke;
 }
 
-.videoLoop {
+#videoLoop {
   width: 95%;
   justify-self: center;
   margin-top: 2rem;

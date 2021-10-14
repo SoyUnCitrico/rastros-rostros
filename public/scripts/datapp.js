@@ -152,11 +152,16 @@ const translateGender = (string) => {
   return traduccion;
 }
 
-const video =  document.querySelector("video");
-// const player = new MediaPlayer({ el: video, plugins: [
-//   new AutoPlay(),
-//   new AutoPause(),
-// ] });
+var options = {
+  width: 400,
+  height: 300,
+  channel: "lacolmenatlx",
+  // only needed if your site is also embedded on embed.example.com and othersite.example.com
+  parent: ["rastros-rostros.herokuapp.com"]
+};
+var reproductor = new Twitch.Player("videoLoop", options);
+reproductor.setVolume(0.5);
+
 
 let displayInfo = document.querySelector(".displayInfo");
 let params = (new URL(window.location.href)).searchParams;
@@ -201,32 +206,6 @@ if(Array.from(params).length > 0) {
         console.log("No pude identificar este parametro: ", pair[0])
         break;
     }
-
-    
-    // if(pair[0] === "emocion") {
-    //   p = document.createElement("span")
-    //   p.className ="infoParrafo";
-    //   p.innerHTML = `${capitalizeFirstLetter(pair[0].toString())}: ${translateEmotion(pair[1])}`;
-    //   // p.style.display = "inline";
-    // } else if(pair[0] === "probEmo") {
-    //   p = document.createElement("span")
-    //   p.className ="probParrafo";
-    //   p.innerHTML = `, con una probabilidad del: ${(pair[1] * 100)}% <br>`;
-    // } else if(pair[0] === "genero") {
-    //   p = document.createElement("span")
-    //   p.className ="infoParrafo";
-    //   p.innerHTML = `${capitalizeFirstLetter(pair[0].toString())}: ${translateGender(pair[1])}`;
-    // } else if (pair[0] === "probGen") {
-    //   p = document.createElement("span")
-    //   p.className ="probParrafo";
-    //   p.innerHTML = `, con una probabilidad del: ${(pair[1] * 100)}% <br>`;
-      
-    // } else{
-    //   p = document.createElement("p")
-    //   p.className ="infoParrafo";
-    //   p.innerHTML = `${capitalizeFirstLetter(pair[0].toString())}: ${pair[1]}`;
-    // }
-    
     displayInfo.append(p);    
   }
 }
