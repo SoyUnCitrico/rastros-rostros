@@ -2,10 +2,10 @@ const store = require('./store-photos');
 const request = require('request-promise-native');
 const Photo = require('./model-photos');
 const fs = require("fs");
-const { FACE_DETECTION, FACE_EMOTIONS } = require('../../config');
+// const { FACE_DETECTION, FACE_EMOTIONS } = require('../../config');
 
-// const FACE_DETECTION = process.env.FACE_DETECTION;
-// const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
+const FACE_DETECTION = process.env.FACE_DETECTION;
+const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
 
 const makeRequest = async (method, url, datos, files = {}) => {
     let data = JSON.parse(JSON.stringify(datos))
