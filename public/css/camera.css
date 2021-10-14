@@ -14,7 +14,7 @@ body {
 }
 main {
   display: grid;
-  /* justify-content: center; */
+  width: 95%;
 }
 h1 {
   text-align: center;
@@ -28,8 +28,8 @@ h1 {
 }
 p {
   margin-top: 1rem;
-  margin-bottom: 2rem;
-  margin-left: 1rem;
+  /* margin-bottom: 2rem; */
+  margin-left: 0.6rem;
   margin-right: 0.6rem;
 }
 
@@ -72,3 +72,15 @@ a:hover{
   background: #010101;
   cursor: pointer;
 }
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 90%;
+  justify-content: space-between;
+}
+
+.descripcionProyecto {
+  width: 92%;
+}
+

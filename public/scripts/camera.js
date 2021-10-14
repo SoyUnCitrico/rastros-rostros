@@ -53,10 +53,9 @@ boton.addEventListener('click', async () => {
                 let probGen = (respuesta.body.genProb.toString())
                 window.location.assign(`./dataApp.html?edad=${edad}&emocion=${emo}&probEmo=${probEmo}&genero=${genero}&probGen=${probGen}`)
             } else if(response === undefined){
-                if(!alert('Algo ocurrio al tomar la foto, intentalo de nuevo')){window.location.reload();}
+                if(!alert('Algo ocurrio al tomar la foto, no se identifico el archivo')){window.location.reload();}
             }   else {
-                if(!alert('Algo ocurrio al tomar la foto, intentalo de nuevo')){window.location.reload();}
-                throw new Error('Algo ocurrio al tomar la foto, intentalo de nuevo');  
+                if(!alert('Ocurrio un error al procesar la foto, intentalo de nuevo')){window.location.reload();}
             }
         })
         .catch(e => {
@@ -87,5 +86,9 @@ function setup() {
 }
 
 function draw(){
+    translate(width, 0);
+    //then scale it by -1 in the x-axis
+    //to flip the image
+    scale(-1, 1);
     image(capture, 0, 0, width, height);
 }

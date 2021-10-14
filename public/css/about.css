@@ -14,11 +14,64 @@ body {
 }
 
 main {
-  /* background: red; */
   display: grid;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+a {
+  border: #f8f8ff 1px outset;
+  padding: .6rem;
+  width: auto;
+  text-align: center;
+  border-radius: 8px;
+  color: whitesmoke;
+  text-decoration: none;
   justify-self: center;
 }
 
-h1 {
-  text-align: center;
+a:hover{
+  border: none;
+  color:#010101;
+  background: whitesmoke;
+}
+section {
+  display: grid;
+  width: 95%;
+  justify-items: center;
+  margin-top: 1.6rem;
+}
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  /* justify-self: center; */
+  justify-content: space-around;
+}
+
+.infoText {
+  width: 90%;
+  display: grid;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  justify-self: center;
+}
+
+.infoAgrad {
+  width: 90%;
+  display: grid;
+  justify-self: center;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+h4 {
+  margin-bottom: 1.6rem;
+}
+p {
+  margin-bottom: .6rem;
 }

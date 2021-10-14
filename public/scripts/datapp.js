@@ -55,11 +55,12 @@ const translateGender = (string) => {
   return traduccion;
 }
 
-let videoContenedor = document.querySelector(".videoContainer");
+let videoContenedor = document.querySelector("#videoTwitch");
+console.log(videoContenedor);
 let anchoVideo = videoContenedor.offsetWidth;
 
-if(anchoVideo > 900) { 
-  anchoVideo = 900;
+if(anchoVideo > 800) { 
+  anchoVideo = 800;
 }
 
 let altoVideo = anchoVideo * 3 / 4;
@@ -70,7 +71,7 @@ let options = {
   channel: "lacolmenatlx",
   parent: ["rastros-rostros.herokuapp.com"]
 };
-let reproductor = new Twitch.Player("videoLoop", options);
+let reproductor = new Twitch.Player("videoTwitch", options);
 reproductor.setVolume(0.3);
 
 

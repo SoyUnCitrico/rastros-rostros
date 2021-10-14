@@ -2,11 +2,11 @@ const express = require('express');
 const db = require('./db.js');
 const router = require('./network/routes')
 // Descomentar para probar en local
-// const {DB_URI, PORT} = require('./config.js');
+const {DB_URI, PORT} = require('./config.js');
 
 // Descomentar para probar en el servidor heroku
-const DB_URI = process.env.DB_URI;
-const PORT = process.env.PORT;
+// const DB_URI = process.env.DB_URI;
+// const PORT = process.env.PORT;
 
 db.connect(DB_URI);
 
