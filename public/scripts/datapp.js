@@ -58,8 +58,8 @@ const translateGender = (string) => {
 let videoContenedor = document.querySelector(".videoContainer");
 let anchoVideo = videoContenedor.offsetWidth;
 
-if(anchoVideo > 700) { 
-  anchoVideo = 700;
+if(anchoVideo > 900) { 
+  anchoVideo = 900;
 }
 
 let altoVideo = anchoVideo * 3 / 4;
