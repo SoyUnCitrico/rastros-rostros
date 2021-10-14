@@ -57,23 +57,16 @@ const translateGender = (string) => {
 
 let videoContenedor = document.querySelector(".videoContainer");
 let anchoVideo = videoContenedor.offsetWidth;
-let altoVideo = videoContenedor.offsetHeight;
 
-if(anchoVideo > altoVideo) {
-  if(anchoVideo > 700) { 
-    anchoVideo = 700;
-  } else {
-    anchoVideo = videoContenedor.offsetWidth * 0.85;
-  }
-    altoVideo = anchoVideo * 3 / 4;
-} else {
-  anchoVideo = videoContenedor.offsetWidth * 0.95;
-  altoVideo = anchoVideo;
+if(anchoVideo > 700) { 
+  anchoVideo = 700;
 }
 
+let altoVideo = anchoVideo * 3 / 4;
+
 let options = {
-  width: 400,
-  height: 300,
+  width: anchoVideo,
+  height: altoVideo,
   channel: "lacolmenatlx",
   parent: ["rastros-rostros.herokuapp.com"]
 };
