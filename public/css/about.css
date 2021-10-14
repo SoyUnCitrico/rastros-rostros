@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  width: 100%;
+  height: auto;
+  color: whitesmoke;
+  background: #010101;
+  justify-items: center;
+}
+
+main {
+  /* background: red; */
+  display: grid;
+  justify-self: center;
+}
+
+h1 {
+  text-align: center;
+}

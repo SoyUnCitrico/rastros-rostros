@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R//R--DATA</title>
+  <title>R//R</title>
   <link rel="stylesheet" href="./css/dataApp.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +12,21 @@
 </head>
 <body>
   <main>  
-    <h4>Disfruta la transmision del evento en vivo</h4>
-    <video loop class="videoLoop">
-      <source src="./data/rostrosVideo.mp4">
-    </video>
     <div class="displayInfo"></div>
 
+    <h2 class="videoTitle"">Disfruta la transmision del evento en vivo</h2>
+    <!-- <video loop class="videoLoop">
+      <source src="./data/rostrosVideo.mp4">
+    </video> -->
+    <iframe
+      src="https://player.twitch.tv/?lacolmenatlx&parent=rastros-rostros.herokuapp.com"
+      class="videoLoop"
+      height="400"
+      width="300"
+      allowfullscreen="true"
+    >
+    </iframe>
+    <a href="./info.html">Acerca de la pieza</a>
     <a href="./">Regresa al inicio</a>
   </main>
   <script src="./scripts/datapp.js"></script>

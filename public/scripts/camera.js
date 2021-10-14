@@ -48,8 +48,10 @@ boton.addEventListener('click', async () => {
                 let respuesta = await response.json();
                 let edad = (Math.round(respuesta.body.age).toString());
                 let emo = (respuesta.body.emotion);
+                let probEmo = (respuesta.body.emotionProb.toString())
                 let genero = (respuesta.body.gender);
-                window.location.assign(`./dataApp.html?edad=${edad}&emocion=${emo}&genero=${genero}`)
+                let probGen = (respuesta.body.genProb.toString())
+                window.location.assign(`./dataApp.html?edad=${edad}&emocion=${emo}&probEmo=${probEmo}&genero=${genero}&probGen=${probGen}`)
             } else if(response === undefined){
                 if(!alert('Algo ocurrio al tomar la foto, intentalo de nuevo')){window.location.reload();}
             }   else {

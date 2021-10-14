@@ -24,7 +24,7 @@ h1 {
 }
 
 a {
-  margin: 1rem;
+  margin-top: 2rem;
   border: #f8f8ff 1px outset;
   padding: .6rem;
   width: 200px;
@@ -41,29 +41,25 @@ a:hover{
   background: whitesmoke;
 }
 
-#fetchData {
-  margin: 1rem;
-  padding: .6rem;
-  border-radius: 8px;
-  width: 240px;
-  letter-spacing: 2px;
-  font-size: 1.4rem;
-  font-weight: bolder;
-  justify-self: center;
-  border: whitesmoke 1px outset;
-  color:#010101;
-  background: whitesmoke;
-  text-decoration: none;
-}
-
-#fetchData:hover{
-  border: #f8f8ff 1px outset;
-  color: whitesmoke;
-  background: #010101;
-  cursor: pointer;
-}
-
 .videoLoop {
   width: 95%;
-  justify-items: center;
+  justify-self: center;
+  margin-top: 2rem;
+}
+
+.infoTitle {
+  margin-top: 1.2rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.infoParrafo {
+  margin-top: 0.2rem;
+  margin-left: 1.6rem;
+}
+
+.videoTitle {
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
 }

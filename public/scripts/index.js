@@ -1,7 +1,3 @@
-// import AutoPause from '/rostros/public/plugins/AutoPause';
-// import AutoPlay from '/rostros/public/plugins/AutoPlay';
-// import MediaPlayer from '/rostros/public/MediaPlayer';
-
 class MediaPlayer {
     constructor(config) {
         this.media = config.el;
@@ -46,7 +42,7 @@ class MediaPlayer {
 
   class AutoPlay {
     constructor(){
-        console.log("Creando el autoplay");
+        // console.log("Creando el autoplay");
     }
   
     run(player) {
@@ -100,11 +96,8 @@ class AutoPause {
 
 
 const video =  document.querySelector("video");
-// const buttonPlay =  document.querySelector("#buttonPlay");
 const player = new MediaPlayer({ el: video, plugins: [
     new AutoPlay(),
     new AutoPause(),
 ] });
-// console.log(player)
-// buttonPlay.onclick = () => player.togglePlay();
 
