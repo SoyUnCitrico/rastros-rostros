@@ -10,7 +10,7 @@ let alto = window.innerHeight;
 
 // let ancho = sketchContainer.offsetWidth;
 // let alto = sketchContainer.offsetHeight;
-console.log(ancho, alto);
+// console.log(ancho, alto);
 
 if(ancho > alto) {
     if(ancho > 700) { 
@@ -24,7 +24,7 @@ if(ancho > alto) {
     alto = ancho;
 }
 
-console.log(ancho, alto);
+// console.log(ancho, alto);
 
 boton.addEventListener('click', async () => {
     capture.loadPixels();

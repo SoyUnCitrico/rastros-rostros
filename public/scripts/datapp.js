@@ -1,103 +1,6 @@
-class MediaPlayer {
-  constructor(config) {
-      this.media = config.el;
-      this.plugins = config.plugins || [];
-      this._initPlugins();
-  }
-
-  _initPlugins() {
-    this.plugins.forEach(plugin => {
-      plugin.run(this);
-    });
-  }
-
-  pause() {
-    this.media.pause();
-  }
-  play() {
-    this.media.play();
-  }
-  togglePlay() {
-    if(this.media.paused) {
-      this.play();
-    } else {
-      this.pause();
-    }
-  }
-
-  mute() {
-    this.media.muted = true;
-  }
-
-  unmute() {
-    this.media.muted = false;
-  }
-
-  toggleMute() {
-       this.media.muted = !this.media.muted;
-       console.log("MUTE: " + this.media.muted);
-    }
-};
-
-
-class AutoPlay {
-  constructor(){
-  }
-
-  run(player) {
-    if(!player.media.muted) {
-      player.media.muted = true;
-    }
-    player.play();
-    console.log("Auto Playing");
-  }
-}
-
-class AutoPause {
-  constructor() {  
-    this.threshold = 0.25;
-    this.handleIntersection = this.handleIntersection.bind(this);
-    this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
-  }
-
-  run(player) {
-    this.player = player;
-    const observer = new IntersectionObserver(this.handleIntersection, {
-      threshold: this.threshold,
-    });
-    observer.observe(player.media);
-    document.addEventListener("visibilitychange", this.handleVisibilityChange)
-  }
-  
-  handleIntersection (entries) {
-    const entry = entries[0];
-    
-    const isVisible = entry.intersectionRatio >= this.threshold;
-
-    if(isVisible) {
-      this.player.play();
-    } else {
-      this.player.pause();
-    }
-    // console.log(entry);
-  }
-
-  handleVisibilityChange () {
-    const isVisible = document.visibilityState === "visible";
-    if(isVisible) {
-      this.player.play();
-    } else {
-      this.player.pause();
-    }
-  }
-  
-}
-
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-
 
 const translateEmotion = (string) => {
   let traduccion = "";
@@ -152,15 +55,30 @@ const translateGender = (string) => {
   return traduccion;
 }
 
-var options = {
+let videoContenedor = document.querySelector(".videoContainer");
+let anchoVideo = videoContenedor.offsetWidth;
+let altoVideo = videoContenedor.offsetHeight;
+
+if(anchoVideo > altoVideo) {
+  if(anchoVideo > 700) { 
+    anchoVideo = 700;
+  } else {
+    anchoVideo = videoContenedor.offsetWidth * 0.85;
+  }
+    altoVideo = anchoVideo * 3 / 4;
+} else {
+  anchoVideo = videoContenedor.offsetWidth * 0.95;
+  altoVideo = anchoVideo;
+}
+
+let options = {
   width: 400,
   height: 300,
   channel: "lacolmenatlx",
-  // only needed if your site is also embedded on embed.example.com and othersite.example.com
   parent: ["rastros-rostros.herokuapp.com"]
 };
-var reproductor = new Twitch.Player("videoLoop", options);
-reproductor.setVolume(0.5);
+let reproductor = new Twitch.Player("videoLoop", options);
+reproductor.setVolume(0.3);
 
 
 let displayInfo = document.querySelector(".displayInfo");
