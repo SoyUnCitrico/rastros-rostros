@@ -44,6 +44,7 @@ a {
   color: whitesmoke;
   text-decoration: none;
   justify-self: center;
+  text-align: center;
 }
 
 a:hover{

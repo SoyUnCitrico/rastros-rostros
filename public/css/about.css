@@ -32,6 +32,7 @@ a {
   color: whitesmoke;
   text-decoration: none;
   justify-self: center;
+  text-align: center;
 }
 
 a:hover{
@@ -49,8 +50,6 @@ section {
 .buttonContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* width: 95%; */
-  /* justify-self: center; */
   justify-items: center;
 }
 
@@ -79,8 +78,8 @@ p {
 
 @media (max-width: 600px) {
   a {
-    width: 120px;
-    padding: .4rem;
+    width: 100px;
+    padding: .2rem;
   }
 
   .infoText {
@@ -97,6 +96,6 @@ p {
   a {
     height: 60px;
     width: 72px;
-    padding: .2rem;
+    padding: .1rem;
   }
 }

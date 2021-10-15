@@ -33,6 +33,7 @@ a {
   text-decoration: none;
   justify-self: center;
   place-items: center;
+  text-align: center;
 }
 
 a:hover{
