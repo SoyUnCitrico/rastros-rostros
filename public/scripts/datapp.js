@@ -113,6 +113,11 @@ if(Array.from(params).length > 0) {
         p.className ="probParrafo";
         p.innerHTML = `, con una probabilidad del: ${(pair[1] * 100)}% <br>`; 
         break;
+      case "index":
+        p = document.createElement("p")
+        p.className ="infoParrafo";
+        p.innerHTML = `Eres el participante numero: ${(pair[1])} <br>`; 
+        break;
       default:
         p = document.createElement("p")
         console.log("No pude identificar este parametro: ", pair[0])

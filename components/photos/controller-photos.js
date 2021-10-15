@@ -11,6 +11,11 @@ const FACE_DETECTION = process.env.FACE_DETECTION;
 const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
 const FACE_TOKEN = process.env.FACE_TOKEN
 
+const getIndex = async () => {
+    let index = await store.index();
+    return index;
+}
+
 const makeRequest = async (method, url, datos, files = {}) => {
     let data = JSON.parse(JSON.stringify(datos))
     for (let i of Object.keys(files)) data[i] = fs.createReadStream(files[i]);
@@ -32,6 +37,7 @@ const makeRequest = async (method, url, datos, files = {}) => {
 const addPhoto = (reqBody) => {
     return new Promise(async (resolve, reject) => {    
         try{
+            let indice = await getIndex();
             let analysis = await makeRequest("POST", FACE_DETECTION, {"photo": reqBody.snap}, {})
                                     .then(response => {
                                         if(!response) {
@@ -111,6 +117,7 @@ const addPhoto = (reqBody) => {
                 emotion: emotionToDB[0],
                 emotionProb: emotionToDB[1],
                 place: 'APP',
+                index: indice,
             })  
             store.add(newPhoto);
             resolve(newPhoto);

@@ -30,7 +30,8 @@ boton.addEventListener('click', async () => {
     capture.loadPixels();
     let snap = capture.canvas.toDataURL('image/png', 1.0);
     let data = {lat, lon, snap};
-    let message = JSON.stringify(data);  
+    let message = JSON.stringify(data);
+    // let index = 0;
     const options = {
         method: 'POST',
         headers: {
@@ -51,7 +52,8 @@ boton.addEventListener('click', async () => {
                 let probEmo = (respuesta.body.emotionProb.toString())
                 let genero = (respuesta.body.gender);
                 let probGen = (respuesta.body.genProb.toString())
-                window.location.assign(`./dataApp.html?edad=${edad}&emocion=${emo}&probEmo=${probEmo}&genero=${genero}&probGen=${probGen}`)
+                let indice = respuesta.body.index;
+                window.location.assign(`./dataApp.html?edad=${edad}&emocion=${emo}&probEmo=${probEmo}&genero=${genero}&probGen=${probGen}&index=${indice}`)
             } else if(response === undefined){
                 if(!alert('Algo ocurrio al tomar la foto, no se identifico el archivo')){window.location.reload();}
             }   else {

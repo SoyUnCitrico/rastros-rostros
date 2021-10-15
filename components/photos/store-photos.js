@@ -13,8 +13,17 @@ const listPhotos = async () => {
     return photos;
 }
 
+const getLastIndex = async() => {
+    // console.log("GET INDEX");
+    // // const photos = await Model.find();
+    // // return photos;
+    let index = await Model.count()
+    return index + 1;
+}
+
 module.exports = {
     add: addPhoto,
     get: getPhoto,
     list: listPhotos,
+    index: getLastIndex,
 }
