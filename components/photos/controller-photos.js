@@ -122,7 +122,7 @@ const addPhoto = (reqBody) => {
                 emotion: emotionToDB[0],
                 emotionProb: emotionToDB[1],
                 place: 'APP',
-                // index: indice,
+                index: indice,
             })  
             store.add(newPhoto);
             resolve(newPhoto);
