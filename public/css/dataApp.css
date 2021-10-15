@@ -89,7 +89,7 @@ a:hover{
 @media (max-width: 380px) {
   a {
     height: 60px;
-    width: 80px;
+    width: 72px;
     padding: .2rem;
   }
 }
