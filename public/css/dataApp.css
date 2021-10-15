@@ -26,7 +26,7 @@ h1 {
 
 a {
   border: #f8f8ff 1px outset;
-  padding: 1rem;
+  padding: .6rem;
   width: auto;
   border-radius: 8px;
   color: whitesmoke;
@@ -73,11 +73,11 @@ a:hover{
 }
 
 .buttonContainer {
-  width: 90%;
+  width: 95%;
   display: grid;
   margin-top: 2rem;
   grid-template-columns: repeat(3,1fr);
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @media (max-width: 600px) {
