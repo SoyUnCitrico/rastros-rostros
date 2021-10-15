@@ -78,12 +78,12 @@ a:hover{
   display: grid;
   margin-top: 2rem;
   grid-template-columns: repeat(3,1fr);
-  justify-items: center;
+  justify-items: space-around;
 }
 
 @media (max-width: 600px) {
   a {
-    width: 120px;
+    width: 100px;
     padding: .4rem;
   }
 }
