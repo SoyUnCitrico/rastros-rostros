@@ -49,9 +49,9 @@ section {
 .buttonContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 95%;;
+  width: 95%;
   /* justify-self: center; */
-  justify-content: space-around;
+  justify-items: center;
 }
 
 .infoText {
