@@ -41,10 +41,9 @@ boton.addEventListener('click', async () => {
         };
     
     await fetch('/photo/', options)
-        .then(async (response) => {    
+        .then(async (response) => { 
+            // console.log(response);   
             if (response.ok) {
-                // Para recargar la pagina
-                // window.location.reload();
                 // Para mandar hacia otra pagina los datos del analisis
                 let respuesta = await response.json();
                 let edad = (Math.round(respuesta.body.age).toString());

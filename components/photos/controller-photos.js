@@ -38,6 +38,11 @@ const addPhoto = (reqBody) => {
     return new Promise(async (resolve, reject) => {    
         try{
             let indice = await getIndex();
+            // if(indice > 10) {
+            //     console.error("[photoController] Limite de participantees por hoy");
+            //     reject("LLegamos al limite de fotos por hoy, intentalo mañana");
+            //     return false;
+            // }
             let analysis = await makeRequest("POST", FACE_DETECTION, {"photo": reqBody.snap}, {})
                                     .then(response => {
                                         if(!response) {
@@ -117,7 +122,7 @@ const addPhoto = (reqBody) => {
                 emotion: emotionToDB[0],
                 emotionProb: emotionToDB[1],
                 place: 'APP',
-                index: indice,
+                // index: indice,
             })  
             store.add(newPhoto);
             resolve(newPhoto);

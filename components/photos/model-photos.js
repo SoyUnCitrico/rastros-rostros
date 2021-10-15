@@ -29,9 +29,9 @@ const mySchema =  new Schema({
     place: {
         type: String
     },
-    index: {
-        type: String
-    },
+    // index: {
+    //     type: String
+    // },
 });
 
 const model = mongoose.model('Photo',mySchema);

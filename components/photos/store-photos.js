@@ -14,9 +14,6 @@ const listPhotos = async () => {
 }
 
 const getLastIndex = async() => {
-    // console.log("GET INDEX");
-    // // const photos = await Model.find();
-    // // return photos;
     let index = await Model.count()
     return index + 1;
 }
