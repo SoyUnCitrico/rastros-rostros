@@ -37,9 +37,9 @@ p {
 a {
   margin: 1rem;
   border: #f8f8ff 1px outset;
-  padding: .6rem;
+  padding: 1rem;
   width: 200px;
-  text-align: center;
+  place-items: center;
   border-radius: 8px;
   color: whitesmoke;
   text-decoration: none;
@@ -54,9 +54,8 @@ a:hover{
 
 #snapButton {
   margin: 1rem;
-  padding: .6rem;
+  padding: 1.4rem;
   border-radius: 8px;
-  width: 240px;
   letter-spacing: 2px;
   font-size: 1.4rem;
   font-weight: bolder;
@@ -85,3 +84,16 @@ a:hover{
   width: 92%;
 }
 
+@media (max-width: 600px) {
+  a {
+    width: 140px;
+    padding: .4rem;
+  }
+}
+@media (max-width: 380px) {
+  a {
+    height: 60px;
+    width: 80px;
+    padding: .2rem;
+  }
+}

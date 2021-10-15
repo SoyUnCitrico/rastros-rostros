@@ -25,9 +25,9 @@ h2 {
 
 a {
   border: #f8f8ff 1px outset;
-  padding: .6rem;
+  padding: 1rem;
   width: auto;
-  text-align: center;
+  place-items: center;
   border-radius: 8px;
   color: whitesmoke;
   text-decoration: none;
@@ -74,4 +74,18 @@ h4 {
 }
 p {
   margin-bottom: .6rem;
+}
+
+@media (max-width: 600px) {
+  a {
+    width: 140px;
+    padding: .4rem;
+  }
+}
+@media (max-width: 380px) {
+  a {
+    height: 60px;
+    width: 80px;
+    padding: .2rem;
+  }
 }

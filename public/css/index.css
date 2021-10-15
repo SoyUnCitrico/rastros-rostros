@@ -14,7 +14,6 @@ body {
 }
 
 main {
-  /* background: red; */
   display: grid;
   justify-self: center;
   width: 95%;
@@ -24,7 +23,6 @@ main {
   display: grid;
   text-align: center;
   color:whitesmoke;
-  /* background-color: yellow; */
   margin: 4rem 0 2rem 0;
   place-items: center;
   justify-self: center;
@@ -33,18 +31,22 @@ video {
   width: 100%;
 }
 .hero-nav {
-  /* background-color: yellowgreen; */
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  place-items: center;
+  height: 80px;
+  margin-top: 6rem;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
 }
 
 .hero-nav a{
+  display: grid;
   border: ghostwhite 1px outset;
-  padding: 1.6rem;
+  padding: 1rem;
   border-radius: 8px;
   color: whitesmoke;
-  text-decoration:none
+  text-decoration: none;
+  place-items: center;
+  width: 50%;
 }
 
 .hero-nav a:hover{
@@ -81,4 +83,24 @@ video {
 
 h1 {
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  .hero-nav {
+    height: 60px;
+  }
+  .hero-nav a {
+    width: 120px;
+    padding: .4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-nav {
+    height: 80px;
+  }
+  .hero-nav a {
+    width: 80px;
+    padding: .2rem;
+  }
 }
