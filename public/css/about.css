@@ -49,7 +49,7 @@ section {
 .buttonContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 95%;
+  /* width: 95%; */
   /* justify-self: center; */
   justify-items: center;
 }
@@ -79,7 +79,7 @@ p {
 
 @media (max-width: 600px) {
   a {
-    width: 140px;
+    width: 120px;
     padding: .4rem;
   }
 
