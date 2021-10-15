@@ -9,7 +9,7 @@ const fs = require("fs");
 // Descomentar para ejecucion en heroku
 const FACE_DETECTION = process.env.FACE_DETECTION;
 const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
-const FACE_TOKEN = process.env.FACE_TOKEN
+const FACE_TOKEN = process.env.FACE_TOKEN;
 
 const getIndex = async () => {
     let index = await store.index();
@@ -38,11 +38,11 @@ const addPhoto = (reqBody) => {
     return new Promise(async (resolve, reject) => {    
         try{
             let indice = await getIndex();
-            // if(indice > 10) {
-            //     console.error("[photoController] Limite de participantees por hoy");
-            //     reject("LLegamos al limite de fotos por hoy, intentalo mañana");
-            //     return false;
-            // }
+            if(indice > 180) {
+                console.error("[photoController] Limite de participantees por hoy");
+                reject("LLegamos al limite de fotos por hoy, intentalo mañana");
+                return false;
+            }
             let analysis = await makeRequest("POST", FACE_DETECTION, {"photo": reqBody.snap}, {})
                                     .then(response => {
                                         if(!response) {

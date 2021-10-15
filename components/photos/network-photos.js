@@ -22,6 +22,7 @@ router.get('/', async(req,res) => {
             response.succes(req, res, doc, 201);
         })
         .catch(e => {
+            // console.error("catching error", e);
             response.error(res,req,'Foto invalida', 400, 'Error al postear foto');
         })
     }
@@ -33,6 +34,7 @@ router.post('/', (req, res) => {
             response.succes(req, res, newPhoto, 201);
         })
         .catch(e => {
+            console.error("catching error", e);
             response.error(req, res, "Fotografia invalida", 400, e);
         })
     }

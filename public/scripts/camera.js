@@ -42,7 +42,7 @@ boton.addEventListener('click', async () => {
     
     await fetch('/photo/', options)
         .then(async (response) => { 
-            // console.log(response);   
+            console.log(response);   
             if (response.ok) {
                 // Para mandar hacia otra pagina los datos del analisis
                 let respuesta = await response.json();

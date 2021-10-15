@@ -48,6 +48,7 @@ section {
 }
 
 .buttonContainer {
+  margin-bottom: 2rem;
   display: grid;
   width: 95%;
   grid-template-columns: repeat(3, 1fr);
