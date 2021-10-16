@@ -79,11 +79,15 @@ let displayInfo = document.querySelector(".displayInfo");
 let params = (new URL(window.location.href)).searchParams;
 
 if(Array.from(params).length > 0) {
-  let title = document.createElement("h4")
+  let title = document.createElement("h3")
   title.className= "infoTitle";
-  title.innerHTML = `Gracias por participar, tu foto sera proyectada despues de las 10:30pm. 
-  Los datos que se obtuvieron de tu foto son: `
+  title.innerHTML = `Gracias por participar, tu foto sera proyectada despues de las 10:30pm.`
   displayInfo.append(title);
+  
+  let subtitle = document.createElement("h4")
+  subtitle.className= "infoTitle";
+  subtitle.innerHTML = `Los datos que se obtuvieron de tu foto son: `
+  displayInfo.append(subtitle);
 
   for(var pair of params.entries()) {
     let p;

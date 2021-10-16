@@ -4,12 +4,12 @@ const Photo = require('./model-photos');
 const fs = require("fs");
 
 // Descomentar para ejecucion en local
-// const { FACE_DETECTION, FACE_EMOTIONS, FACE_TOKEN } = require('../../config');
+const { FACE_DETECTION, FACE_EMOTIONS, FACE_TOKEN } = require('../../config');
 
 // Descomentar para ejecucion en heroku
-const FACE_DETECTION = process.env.FACE_DETECTION;
-const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
-const FACE_TOKEN = process.env.FACE_TOKEN;
+// const FACE_DETECTION = process.env.FACE_DETECTION;
+// const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
+// const FACE_TOKEN = process.env.FACE_TOKEN;
 
 const getIndex = async () => {
     let index = await store.index();
