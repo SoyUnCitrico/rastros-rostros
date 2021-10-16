@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const mySchema =  new Schema({
-    lat:{
-        type: String,
-    },
-    lon:{
-        type: String, 
-    },
+    // lat:{
+        // type: String,
+    // },
+    // lon:{
+        // type: String, 
+    // },
     image:{
         type: String
     },

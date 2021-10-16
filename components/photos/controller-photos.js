@@ -113,8 +113,8 @@ const addPhoto = (reqBody) => {
             }
             
             const newPhoto = new Photo({
-                lat: reqBody.lat,
-                lon: reqBody.lon,
+                // lat: reqBody.lat,
+                // lon: reqBody.lon,
                 image: reqBody.snap,
                 age: analysis[0].age,
                 gender: analysis[0].gender.value,

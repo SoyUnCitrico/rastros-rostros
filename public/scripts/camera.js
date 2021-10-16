@@ -29,7 +29,7 @@ if(ancho > alto) {
 boton.addEventListener('click', async () => {
     capture.loadPixels();
     let snap = capture.canvas.toDataURL('image/png', 1.0);
-    let data = {lat, lon, snap};
+    let data = {snap};
     let message = JSON.stringify(data);
     // let index = 0;
     const options = {
@@ -73,17 +73,6 @@ function setup() {
     capture = createCapture('VIDEO');
     capture.hide();
     capture.elt.muted = true;
-    if('geolocation' in navigator){
-        console.log("Geo available");
-        navigator.geolocation.getCurrentPosition(position=>{
-                lat = position.coords.latitude.toString();
-                lon =  position.coords.longitude.toString();
-        });
-    } else  {
-        //que pasa si no se detecta ubicacion
-        lat = 0;
-        lon = 0;
-    }
 }
 
 function draw(){

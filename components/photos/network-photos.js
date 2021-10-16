@@ -1,19 +1,8 @@
 const express = require('express');
-// const multer = require('multer');
-// const path = require("path");
 const response = require('../../network/response');
 const controller = require('./controller-photos');
 const router = express.Router();
 
-// const storage = multer.diskStorage({
-//     destination : "public/files/",
-//     filename : function (req, file, cb) {
-//         cb(null, file.fieldname + "-" + Date.now() + 
-//         path.extname(file.originalname))
-//     }
-// })
-
-// const imageUpload = multer({ storage: storage });
 
 router.get('/', async(req,res) => {
     // console.log("Entrando al GET network");
