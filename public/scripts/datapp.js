@@ -131,6 +131,3 @@ if(Array.from(params).length > 0) {
     displayInfo.append(p);    
   }
 }
-
-
-
