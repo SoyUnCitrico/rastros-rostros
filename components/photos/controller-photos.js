@@ -7,7 +7,7 @@ const fs = require("fs");
 // const { FACE_DETECTION, FACE_EMOTIONS, FACE_TOKEN } = require('../../config');
 
 // Descomentar para ejecucion en heroku
-const FACE_DETECT¿ION = process.env.FACE_DETECTION;
+const FACE_DETECTION = process.env.FACE_DETECTION;
 const FACE_EMOTIONS = process.env.FACE_EMOTIONS;
 const FACE_TOKEN = process.env.FACE_TOKEN;
 
