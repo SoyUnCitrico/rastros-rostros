@@ -72,6 +72,7 @@ video {
   justify-items: center;
   height: 200px;
   padding: 2rem;
+  text-align: center;
 }
 
 .hero-prox h3{
