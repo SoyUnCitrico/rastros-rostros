@@ -1,1 +1,4 @@
-### Rastros//Rostros server
+### Rastros//Rostros
+
+This app was developed for the interactive installation "Rastros-Rostros". 
+The installation was active during October 2021 in the city of Guanajuato as part of the "Festival Internacional Cervantino".
